@@ -6,7 +6,7 @@ from .forms import ProdutoForm
 def home(request):
     return render(request, 'produtos_files/home.html')
 
-def lista_produtos(request):
+def listar_produtos(request):
     produtos = {
         'produtos': Produto.objects.all()
     }
