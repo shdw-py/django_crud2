@@ -1,0 +1,21 @@
+<!-- being used in: views.py -->
+
+{% extends 'produtos_files/base.html' %}
+{% block conteudo %}
+<div class="container">
+    <table class="border-3 rounded-2xl p-5 rounded-lg my-12 table-auto mx-auto text-center">
+        <tr>
+            <th class="px-4 py-2 text-lg border border-gray-400 rounded-lg">nome</th>
+            <th class="px-4 py-2 text-lg border border-gray-400 rounded-lg">descricao</th>
+            <th class="px-4 py-2 text-lg border border-gray-400 rounded-lg">produto</th>
+        </tr>
+        {% for produto in produtos %}
+        <tr>
+            <td class="border border-gray-400 px-2 py-2">{{produto.nome}}</td>
+            <td class="border border-gray-400 px-2 py-2">{{produto.descricao}}</td>
+            <td class="border border-gray-400 px-2 py-2">{{produto.preco}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

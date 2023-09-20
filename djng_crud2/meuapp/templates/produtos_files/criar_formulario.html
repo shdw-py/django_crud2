@@ -1,0 +1,13 @@
+<!-- being used in: views.py -->
+{% extends 'produtos_files/base.html' %}
+{% block conteudo %}
+
+<form method="post" action="{% url 'cria_produto' %}" class="flex flex-col gap-7">
+    {% csrf_token %}
+        <input type="text" name="nome" class="px-6 py-3 border-2 border-gray-300 bg-gray-100" placeholder="digite o nome do produto.">
+        <input type="text" name="descricao" class="px-6 py-3 border-2 border-gray-300 bg-gray-100" placeholder="informe a descricao do produto.">
+        <input type="number" name="preco" class="px-6 py-3 border-2 border-gray-300 bg-gray-100" placeholder="digite o preco do produto.">
+        <button type="submit" class="p-6  bg-green-600 font-semibold text-white">Enviar</button>
+</form>
+
+{% endblock %}
