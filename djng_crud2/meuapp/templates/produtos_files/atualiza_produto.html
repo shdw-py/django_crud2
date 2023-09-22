@@ -3,7 +3,9 @@
 {% block conteudo %}
 <form method="post" action="{% url 'atualiza_produto' pk=form.instance.pk %}" class="flex flex-col gap-7">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Atualizar Produto</button>
+    <input type="text" name="nome" class="px-6 py-3 border-2 border-gray-300 bg-gray-100" value="{{form.instance.nome}}">
+    <input type="text" name="descricao" class="px-6 py-3 border-2 border-gray-300 bg-gray-100" value="{{form.instance.descricao}}">
+    <input type="text" name="preco" class="px-6 py-3 border-2 border-gray-300 bg-gray-100" value="{{form.instance.preco}}">
+    <button type="submit" class="px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-semibold text-xl">Atualizar Produto</button>
 </form>
 {% endblock %}
