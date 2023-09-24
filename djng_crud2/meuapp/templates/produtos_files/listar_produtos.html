@@ -3,6 +3,7 @@
 {% extends 'produtos_files/base.html' %}
 {% block conteudo %}
 <div class="container">
+    <h1 class="font-bold text-3xl text-center">Database Records</h1>
     <table class="border-3 rounded-2xl p-5 rounded-lg my-12 table-auto mx-auto text-center">
         <tr>
             <th class="px-4 py-2 text-lg border border-gray-400 rounded-lg">id</th>
@@ -21,9 +22,9 @@
             <!-- Updt n Dlt actions below -->
             <td class="border border-gray-400 px-2 py-2">
             {% if produto.pk %}
-                <div class="flex flex-col gap-3">
-                    <a href="{% url 'atualiza_produto' pk=produto.pk %}" class="btn btn-primary rounded-xl bg-yellow-600 text-white font-semibold p-3">Update</a>
-                    <a href="{% url 'deleta_produto' pk=produto.pk %}" class="btn btn-primary rounded-xl bg-red-600 text-white font-semibold p-3">Delete</a>
+                <div class="flex flex-col gap-2">
+                    <a href="{% url 'atualiza_produto' pk=produto.pk %}" class="btn btn-primary p-1 rounded-xl bg-yellow-500 hover:bg-yellow-700 text-white font-semibold text-sm">Update</a>
+                    <a href="{% url 'deleta_produto' pk=produto.pk %}" class="btn btn-primary p-1 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-sm">Delete</a>
                 </div>
             {% endif %}
             </td>

@@ -1,6 +1,5 @@
 # meuapp/models.py
 from django.db import models
-from django.urls import reverse
 
 class Produto(models.Model):
     id = models.AutoField(primary_key=True)
