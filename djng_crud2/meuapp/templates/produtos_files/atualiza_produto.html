@@ -1,9 +1,13 @@
 <!-- being used in: views.py -- update operation -->
 {% extends 'produtos_files/base.html' %}
 {% block conteudo %}
-<form method="post" action="{% url 'atualiza_produto' pk=form.instance.pk %}" class="flex flex-col gap-7">
+<form method="post" class="flex flex-col gap-3" action="{% url 'atualiza_produto' pk=form.instance.pk %}" class="flex flex-col gap-7">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Atualizar Produto</button>
+    <input type="text" name="campo1" class="border-2 border-red-600" value="{{ form.instance.nome }}">
+    <input type="text" name="campo2" class="border-2 border-red-600" value="{{ form.instance.descricao }}">
+    <input type="text" name="campo2" class="border-2 border-red-600" value="{{ form.instance.preco }}">
+    <input type="text" name="campo2" class="border-2 border-red-600" value="{{ form.instance.registro }}">
+
+    <button type="submit" class="bg-blue-600 p-5 rounded-xl text-xl text-white font-semibold">Atualizar Produto</button>
 </form>
 {% endblock %}
